@@ -1,5 +1,5 @@
 
-//that script check website  plotcount and our file datat plot count resutl.
+//that script check website  plotcount and our file datat plot count.
 // Define the objects to compare
 const data1 = [
   {
