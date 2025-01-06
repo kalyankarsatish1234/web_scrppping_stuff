@@ -1,0 +1,11 @@
+# Define the folder path
+$folderPath = "D:\scrapping\Ahmednagar\Urban"
+
+# Get all .json files in the folder and subfolders
+$jsonFiles = Get-ChildItem -Path $folderPath -Recurse -Filter *.json
+
+# Count the number of .json files
+$jsonFileCount = $jsonFiles.Count
+
+# Output the result
+Write-Output "Total number of .json files: $jsonFileCount"

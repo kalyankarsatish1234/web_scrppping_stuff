@@ -1,0 +1,18 @@
+# Define the folder paths
+$folderPath1 = "D:\scrapping\Ahmednagar\Urban-Dist1"
+$folderPath2 = "D:\scrapping\Ahmednagar\Urban-Dist"
+
+# Get all .xlsx files in both folders
+$filesInFolder1 = Get-ChildItem -Path $folderPath1 -Recurse -Filter *.xlsx
+$filesInFolder2 = Get-ChildItem -Path $folderPath2 -Recurse -Filter *.xlsx
+
+# Create a list of file names for comparison
+$filesInFolder1Names = $filesInFolder1.Name
+$filesInFolder2Names = $filesInFolder2.Name
+
+# Find files present in Folder1 but not in Folder2
+$missingFiles = $filesInFolder1Names | Where-Object { $_ -notin $filesInFolder2Names }
+
+# Output the list of missing files
+Write-Output "List of .xlsx files in Urban-Dist1 but not in Urban-Dist:"
+$missingFiles
